@@ -39,7 +39,7 @@ while True:
               "C : Hırvatistan", "D : Belçika", sep="\n")
         cevap2 = input("Joker kullanmak ister misiniz : ")
         if (cevap2 == evet and jokerhakkı !=0):
-            print("Seyirciye soruluyor...")
+            print("Seyirciye soruluyor...", "Cevap A : %52", "Cevap B : %27", "Cevap C : %15", "Cevap D : %6", sep="\n")
         elif(jokerhakkı==0):
             print("Seyirci jokeriniz kalmamıştır...")
 
@@ -66,7 +66,7 @@ while True:
                   "C : Başakşehir", "D : Satürn", sep="\n")
             cevap2 = input("Joker kullanmak ister misiniz : ")
             if (cevap2 == evet and jokerhakkı != 0):
-                print("Seyirciye soruluyor...")
+                print("Seyirciye soruluyor...", "Cevap A : %52", "Cevap B : %27", "Cevap C : %15", "Cevap D : %6", sep="\n")
             elif (jokerhakkı == 0):
                 print("Seyirci jokeriniz kalmamıştır...")
 
