@@ -9,6 +9,9 @@ print(omer)
 omer.append("eskilerrr")
 print(omer)
 
+jokerhakkı = 3
+jokerhakkı -= 1
+print(jokerhakkı)
 
 
 
