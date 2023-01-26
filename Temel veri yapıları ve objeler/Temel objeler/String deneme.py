@@ -18,10 +18,10 @@ while True:
     cevap1 = input("Şıkkı seçiniz :")
 
     if(cevap1 == Secenek1 ):
-        print("Elendiniz")
+        print("Elendiniz!")
         break
     elif(cevap1 == Secenek2):
-        print("Elendiniz")
+        print("Elendiniz!")
         break
     elif(cevap1 == Secenek3):
         print("Tebrikler!")
@@ -50,14 +50,14 @@ while True:
             print("Tebrikler!")
 
         elif (cevap1 == Secenek2):
-            print("Elendiniz")
+            print("Elendiniz!")
             break
         elif (cevap1 == Secenek3):
             print("Elendiniz!")
             break
 
         elif (cevap1 == Secenek4):
-            print("Elendiniz")
+            print("Elendiniz!")
             break
         else:
             break
@@ -79,18 +79,18 @@ while True:
 
 
             elif (cevap1 == Secenek2):
-                print("Elendiniz")
+                print("Elendiniz!")
                 break
             elif (cevap1 == Secenek3):
                 print("Elendiniz!")
                 break
 
             elif (cevap1 == Secenek4):
-                print("Elendiniz")
+                print("Elendiniz!")
                 break
             else:
                 break
-                print("Yarışma sonlamıştır")
+                print("Yarışma sonlanmıştır")
 
 
 

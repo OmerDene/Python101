@@ -3,7 +3,6 @@ Bakiye sorgulama için 1 i
 Para yatırma için 2 yi
 Para çekme için 3 ü
 programdan çıkmak için 'q' ya basınız.
-
 Seçiniz
 """)
 bakiye = 1000
@@ -14,8 +13,8 @@ while True :
         print("Bakiyeniz :" ,bakiye)
     elif(islem == "2"):
          miktar = int(input("Para yatırıyorsunuz... :"))
-         print("Mevcut bakiye :", bakiye)
          bakiye += miktar
+         print("Mevcut bakiye :", bakiye)
     elif(islem=="3"):
         miktar = int(input("Para çekiyorsunuz... :"))
         if(bakiye - miktar< 0):
