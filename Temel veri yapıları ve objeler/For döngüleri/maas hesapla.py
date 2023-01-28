@@ -7,13 +7,13 @@ new_salaries = []
 for i in salaries:
     if(i>3000):
         y= int(i*10/100 + i)
-        new_salaries.append(y)
+        new_salaries.append(y )
         print(y)
 
 for i in salaries:
     if(i<3000):
         y = int(i*20/100 + i)
-        new_salaries.append(y)
+        new_salaries.append(y )
         print(y)
 """
 Alternatif hesaplama 
