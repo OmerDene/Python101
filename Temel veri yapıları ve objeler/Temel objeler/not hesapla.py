@@ -36,3 +36,17 @@ def not_hesapla(satır):
         harf = "FF"
 
     return isim + "------------------> " + harf + "\n"
+
+with open("dosya.txt","r",encoding= "utf-8") as file:
+
+    eklenecekler_listesi = []
+
+    for i in file:
+
+        eklenecekler_listesi.append(not_hesapla(i))
+
+    with open("notlar.txt","w",encoding="utf-8") as file2:
+
+        for i in eklenecekler_listesi:
+            file2.write(i)
+
