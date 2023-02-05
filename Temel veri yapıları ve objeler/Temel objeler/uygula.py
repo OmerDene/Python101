@@ -1,7 +1,17 @@
-def alan_hesapla(demet):
-    return demet[0] * demet[1]
+def asal_mi(x):
+    i = 2
 
+    if (x == 1):
+        return False
+    elif (x == 2):
+        return True
+    else:
 
-liste = [(3,4),(10,3),(5,6),(1,9)]
+        while (i < x):
 
-print(list(map(alan_hesapla,liste)))
+            if (x % i == 0):
+                return False
+            i += 1
+        return True
+a= list(filter(asal_mi,range(1,100)))
+print(a)
