@@ -1,17 +1,11 @@
-def asal_mi(x):
-    i = 2
-
-    if (x == 1):
-        return False
-    elif (x == 2):
+def üçgen_mi(demet):
+    if (abs(demet[0] + demet[1]) > demet[2] and abs(demet[0] + demet[2]) > demet[1] and abs(demet[1] + demet[2]) >
+            demet[0]):
         return True
     else:
+        return False
 
-        while (i < x):
 
-            if (x % i == 0):
-                return False
-            i += 1
-        return True
-a= list(filter(asal_mi,range(1,100)))
-print(a)
+liste = [(3, 4, 5), (6, 8, 10), (3, 10, 7)]
+
+print(list(filter(üçgen_mi, liste)))
