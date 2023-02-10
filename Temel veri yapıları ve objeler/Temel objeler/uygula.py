@@ -46,9 +46,9 @@ import numpy as np
 #df = pd.DataFrame(dizi,columns=["omer","mehmet","masa"],index=[0,2,4])
 #print(df)
 #print(df.axes) # dataframe in genel bilgileri
-dizi = np.arange(9).reshape(3,3)
+#dizi = np.arange(9).reshape(3,3)
 #print(dizi)
-df = pd.DataFrame(dizi,columns=["ilk kolon","ikinci kolon","ucuncu kolon"])
+#df = pd.DataFrame(dizi,columns=["ilk kolon","ikinci kolon","ucuncu kolon"])
 #a =df.drop(1,axis=0)
 #print(a)
 #print(df)
@@ -67,8 +67,8 @@ df = pd.DataFrame(dizi,columns=["ilk kolon","ikinci kolon","ucuncu kolon"])
 #df.drop("dördüncü kolon", axis = 1, inplace = True) # bu sekilde kolon kalıcı gider(kalıcı)
 #print(df)
 
-m = np.random.randint(1,30, size = (10,3))
-df = pd.DataFrame(m, columns = ["var1","var2","var3"])
+#m = np.random.randint(1,30, size = (10,3))
+#df = pd.DataFrame(m, columns = ["var1","var2","var3"])
 
 #liste = ["var2","var1"]
 
@@ -77,5 +77,25 @@ df = pd.DataFrame(m, columns = ["var1","var2","var3"])
 
 
 #print(df[df.var1>15][["var1","var2","var3"]])
+
+
+m = np.random.randint(1,30, size = (5,3))
+df1 = pd.DataFrame(m, columns = ["var1","var2","var3"])
+
+df2 = df1 + 99
+#print(df2)
+df2.columns = ["var1","var2","deg3"]
+df3 = pd.concat([df1,df2],ignore_index=True)
+
+
+df3= pd.concat([df1, df2])
+
+df3= pd.concat([df1, df2], join = "inner")
+
+
+df3= pd.concat([df1,df2],axis=0)
+
+print(df3.reset_index(drop=True))
+
 
 
