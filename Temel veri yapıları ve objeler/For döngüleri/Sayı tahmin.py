@@ -2,7 +2,7 @@ import random
 import time
 print("guess what... ")
 
-sayımız = random.randint(1,2)
+sayımız = random.randint(1,50)
 tahmin_hakkı = 7
 while True:
     tahmin_sayısı = int(input("Tahmininizi giriniz: "))
@@ -34,6 +34,7 @@ while True:
 
     if (tahmin_hakkı == 0):
         print("Tahmin hakkınız dolmuştur...")
+        print(sayımız)
         break
 
 

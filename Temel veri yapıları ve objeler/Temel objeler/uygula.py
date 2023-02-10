@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 #a = pd.Series([10,88,3,4,5])
 #print(a.axes)
 #print(a.tail(1))
@@ -79,23 +80,43 @@ import numpy as np
 #print(df[df.var1>15][["var1","var2","var3"]])
 
 
-m = np.random.randint(1,30, size = (5,3))
-df1 = pd.DataFrame(m, columns = ["var1","var2","var3"])
+#m = np.random.randint(1,30, size = (5,3))
+#df1 = pd.DataFrame(m, columns = ["var1","var2","var3"])
 
-df2 = df1 + 99
+#df2 = df1 + 99
 #print(df2)
-df2.columns = ["var1","var2","deg3"]
-df3 = pd.concat([df1,df2],ignore_index=True)
+#df2.columns = ["var1","var2","deg3"]
+#df3 = pd.concat([df1,df2],ignore_index=True)
 
 
-df3= pd.concat([df1, df2])
+#df3= pd.concat([df1, df2])
 
-df3= pd.concat([df1, df2], join = "inner")
+#df3= pd.concat([df1, df2], join = "inner")
 
 
-df3= pd.concat([df1,df2],axis=0)
+#df3= pd.concat([df1,df2],axis=0)
 
-print(df3.reset_index(drop=True))
+#print(df3.reset_index(drop=True))
+
+#df1 = pd.DataFrame({'calisanlar': ['Ali', 'Veli', 'Ayse', 'Fatma'],'grup': ['Muhasebe', 'Muhendislik', 'Muhendislik', 'İK']})
+#print(df1)
+#df2 = pd.DataFrame({'calisanlar': ['Ayse', 'Ali', 'Veli', 'Fatma'],'ilk_giris': [2010, 2009, 2014, 2019]})
+#df3 = pd.merge(df1,df2 )
+#print(df3)
+#df3= pd.merge(df1, df2, on = "calisanlar") # calısanlar üzerinden grubu baglama
+#df3= pd.merge(df1, df2)# ust satırla aynı cıktıyı verir
+#print(df3)
+#df5 = pd.DataFrame({'grup': ['Muhasebe', 'Muhasebe', 'Muhendislik', 'Muhendislik', 'İK', 'İK'], 'yetenekler': ['matematik', 'excel', 'kodlama', 'linux', 'excel', 'yonetim']})
+#df6 =pd.merge(df3,df5)
+#print(df6)
+#df = sns.load_dataset("planets")
+#print(df.describe().T)
+#print(df.dropna().describe().T)
+
+df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],
+                   'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
+print(df)
+
 
 
 
