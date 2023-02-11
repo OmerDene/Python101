@@ -113,9 +113,8 @@ import numpy as np
 #print(df.describe().T)
 #print(df.dropna().describe().T)
 
-df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],
-                   'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
-print(df)
+#df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],  'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
+#print(df)
 
 
 
