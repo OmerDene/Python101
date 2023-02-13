@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-# import seaborn as sns
+import seaborn as sns
 
 
 
@@ -140,6 +140,11 @@ import numpy as np
 
 #print(df.groupby("gruplar").apply((lambda x: (x+x.mean()) ))) ???????
 
+#titanic = sns.load_dataset('titanic')
+#a= titanic.groupby(["sex","class"])[["survived"]].aggregate("std").unstack()
+#print(a)
+#b = titanic.pivot_table("survived", index = "sex", columns = "class",aggfunc="max")
+#print(b)
 
 
 
