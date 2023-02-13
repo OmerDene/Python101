@@ -129,16 +129,19 @@ import numpy as np
 #a = df.groupby("gruplar").mean()
 #print(a)
 
-df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],
-                   'degisken1': [10,23,33,22,11,99],
-                   'degisken2': [100,253,333,262,111,969]},
-                   columns = ['gruplar', 'degisken1', 'degisken2'])
+#df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'], 'degisken1': [10,23,33,22,11,99],'degisken2': [100,253,333,262,111,969]}, columns = ['gruplar', 'degisken1', 'degisken2'])
 #print(df)
-df.iloc[5:6,2:3] = [3]
-df.iloc[2:3,2:3] = [5]
+#df.iloc[5:6,2:3] = [3]
+#df.iloc[2:3,2:3] = [5]
 #print(df)
 #def filter_func(x): return x["degisken1"].std() > 9
 
 #a = df.groupby("gruplar").filter(filter_fun,filter_func)
+
+#print(df.groupby("gruplar").apply((lambda x: (x+x.mean()) ))) ???????
+
+
+
+
 
 
