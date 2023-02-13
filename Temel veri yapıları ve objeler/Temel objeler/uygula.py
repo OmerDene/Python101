@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+# import seaborn as sns
+
+
 
 
 #a = pd.Series([10,88,3,4,5])
@@ -115,7 +118,27 @@ import numpy as np
 
 #df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],  'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
 #print(df)
+#df = sns.load_dataset("planets")
+#print(df.describe())
+#df.dropna().describe().T # dropna metodu eksik verilerin hesaplamalardan düsmesini saglıyor.
 
+#df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
+#print(df)
+#df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
 
+#a = df.groupby("gruplar").mean()
+#print(a)
+
+df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],
+                   'degisken1': [10,23,33,22,11,99],
+                   'degisken2': [100,253,333,262,111,969]},
+                   columns = ['gruplar', 'degisken1', 'degisken2'])
+#print(df)
+df.iloc[5:6,2:3] = [3]
+df.iloc[2:3,2:3] = [5]
+#print(df)
+#def filter_func(x): return x["degisken1"].std() > 9
+
+#a = df.groupby("gruplar").filter(filter_fun,filter_func)
 
 
