@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
-
+import matplotlib.pyplot as plt
 
 
 
@@ -118,7 +118,7 @@ import seaborn as sns
 
 #df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],  'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
 #print(df)
-#df = sns.load_dataset("planets")
+df = sns.load_dataset("planets")
 #print(df.describe())
 #df.dropna().describe().T # dropna metodu eksik verilerin hesaplamalardan düsmesini saglıyor.
 
@@ -145,6 +145,12 @@ import seaborn as sns
 #print(a)
 #b = titanic.pivot_table("survived", index = "sex", columns = "class",aggfunc="max")
 #print(b)
+#kat_df = df.select_dtypes(include = ["object"])
+
+#a = df["method"].value_counts().plot.barh();
+#plt.show()
+#print(a)
+
 
 
 

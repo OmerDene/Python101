@@ -17,7 +17,7 @@ class Yazılımcı():
     def dil_ekle(self,yeni_dil):
         self.bildigi_diller.append(yeni_dil)
 
-yazılımcı = Yazılımcı("ömer","dene",2000,["java ","python"])
+yazılımcı = Yazılımcı("omer","dene",2000,["java ","python"])
 
 yazılımcı.dil_ekle("C")
 yazılımcı.zam(500)
