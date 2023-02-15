@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 
 
+
 #a = pd.Series([10,88,3,4,5])
 #print(a.axes)
 #print(a.tail(1))
@@ -118,8 +119,9 @@ import matplotlib.pyplot as plt
 
 #df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],  'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
 #print(df)
-df = sns.load_dataset("planets")
-#print(df.describe())
+#df = sns.load_dataset("planets")
+#print(df.describe().T)
+
 #df.dropna().describe().T # dropna metodu eksik verilerin hesaplamalardan düsmesini saglıyor.
 
 #df = pd.DataFrame({'gruplar': ['A', 'B', 'C', 'A', 'B', 'C'],'veri': [10,11,52,23,43,55]}, columns=['gruplar', 'veri'])
@@ -150,9 +152,35 @@ df = sns.load_dataset("planets")
 #a = df["method"].value_counts().plot.barh();
 #plt.show()
 #print(a)
+"""
+df_num = df.select_dtypes(include = ["float64", "int64"])
+print("Ortalama: {} " .format((df_num["distance"].mean())))
+print("Dolu Gözlem Sayısı: " + str(df_num["distance"].count()))
+print("Maksimum Değer: " + str(df_num["distance"].max()))
+print("Minimum Değer: " + str(df_num["distance"].min()))
+print("Medyan: " + str(df_num["distance"].median()))
+print("Standart Sapma: " + str(df_num["distance"].std()))
 
 
+planets = sns.load_dataset("planets")
+df = planets.copy()
+#print(df.info())
 
+df.method = pd.Categorical(df.method)
+#print(df.dtypes)
+kat_df = df.select_dtypes(include = ["category"]) # bu katergorik degişkenin içindeki sınıfları bulmamızı saglar
+#print(kat_df["method"].value_counts()) # burada kategorik degiskenin sınıfları kac kez kullanıldıgı sayısı verilir.
 
-
+print(df["method"].value_counts().plot.barh())
+plt.show()
+"""
+diamonds = sns.load_dataset('diamonds')
+df = diamonds.copy()
+cut_kategoriler = ["Fair","Good","Very Good","Premium","Ideal"]
+#df["cut"] = pd.Categorical(df.cut,ordered=True)
+#print(df["cut"].head(5))
+df["cut"] = pd.Categorical(df.cut,categories = cut_kategoriler,ordered=False)
+print(df["cut"].head(5))
+df["cut"] = pd.Categorical(df.cut,categories = cut_kategoriler,ordered=True)
+print(df["cut"].head(5))
 
