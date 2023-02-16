@@ -171,17 +171,15 @@ df.method = pd.Categorical(df.method)
 kat_df = df.select_dtypes(include = ["category"]) # bu katergorik degişkenin içindeki sınıfları bulmamızı saglar
 #print(kat_df["method"].value_counts()) # burada kategorik degiskenin sınıfları kac kez kullanıldıgı sayısı verilir.
 """
-planets = sns.load_dataset("planets")
-df = planets.copy()
-print(df["method"].value_counts().plot.barh())
-plt.show()
+
+#print(df["method"].value_counts().plot.barh())
+
 
 diamonds = sns.load_dataset('diamonds')
 df = diamonds.copy()
 cut_kategoriler = ["Fair","Good","Very Good","Premium","Ideal"]
 #df["cut"] = pd.Categorical(df.cut,ordered=True)
 #print(df["cut"].head(5))
-df["cut"] = pd.Categorical(df.cut,categories = cut_kategoriler,ordered=False)
 
 df["cut"] = pd.Categorical(df.cut,categories = cut_kategoriler,ordered=True)
 #print(df["cut"].head(5))
@@ -190,5 +188,9 @@ l = ["J","I","H","G","F","E","D"]
 df["color"] = pd.Categorical(df.color,categories=l,ordered=True)
 #print(df.color.head())
 
-print(sns.barplot(x = "cut", y = "price", hue = "color", data = df))
+#print(sns.barplot(x = "cut", y = "price", hue = "color", data = df))
+
+
+print(sns.histplot(df.price))
 plt.show()
+
