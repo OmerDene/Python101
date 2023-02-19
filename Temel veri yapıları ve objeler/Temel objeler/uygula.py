@@ -1,8 +1,3 @@
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 
 
 
@@ -170,7 +165,7 @@ df.method = pd.Categorical(df.method)
 #print(df.dtypes)
 kat_df = df.select_dtypes(include = ["category"]) # bu katergorik degişkenin içindeki sınıfları bulmamızı saglar
 #print(kat_df["method"].value_counts()) # burada kategorik degiskenin sınıfları kac kez kullanıldıgı sayısı verilir.
-"""
+
 
 #print(df["method"].value_counts().plot.barh())
 
@@ -191,6 +186,16 @@ df["color"] = pd.Categorical(df.color,categories=l,ordered=True)
 #print(sns.barplot(x = "cut", y = "price", hue = "color", data = df))
 
 
-print(sns.histplot(df.price))
+#print(sns.histplot(df.price))
+plt.show()
+print((sns
+ .FacetGrid(df,
+              hue = "cut",
+              height = 10,
+              xlim = (0, 10000))
+ .map(sns.kdeplot, "price")
+ .add_legend()
+))
 plt.show()
 
+"""

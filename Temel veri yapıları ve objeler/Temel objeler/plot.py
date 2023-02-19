@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#planets = sns.load_dataset("planets")
+#df = planets.copy()
+#print(df["year"].value_counts().plot.barh())
+
+#diamonds = sns.load_dataset('diamonds')
+#df = diamonds.copy()
+#l = ["Fair" , 'Good' , 'Very Good' , 'Premium'  ,"Ideal"]
+#df["cut"] =pd.Categorical(df.cut,categories=l,ordered=True)
+#print(df["cut"])
+#print(df["cut"].value_counts().plot.barh().set_title("abcd"))
+
+#print(sns.barplot(x = df.cut.value_counts().index, y = df.cut.value_counts(), data = df))
+
+#print(sns.catplot(x = "cut", y = "price", data = df))
+#print(sns.barplot(x = "cut", y = "price", hue = "color", data = df))
+#print(sns.histplot(df["price"]))
+#print(sns.histplot(df["price"], bins = 20))
+#print(sns.kdeplot(df.price))
+"""print((sns
+ .FacetGrid(df,
+              hue = "cut",
+              height = 5,
+              xlim = (0, 10000))
+ .map(sns.kdeplot, "price", shade= True)
+ .add_legend()
+))
+"""
+#print(sns.catplot(x = "cut", y = "price", hue = "color", kind = "point", data = df))
+tips = sns.load_dataset("tips")
+df = tips.copy()
+#print(sns.boxplot(y = "total_bill",x ="size", hue="sex", orient = "v",data=df))
+print(sns.barplot(x = "size", y = "total_bill", hue = "day", data = df))
+#print(sns.catplot(x = "size", y = "total_bill", hue = "day", kind = "point", data = df))
+plt.show()
