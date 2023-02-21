@@ -23,3 +23,4 @@ elif(Ortalama>=60):
 else :
     print("FF")
 
+
