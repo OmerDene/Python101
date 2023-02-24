@@ -1,8 +1,9 @@
+"""
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+"""
 #planets = sns.load_dataset("planets")
 #df = planets.copy()
 #print(df["year"].value_counts().plot.barh())
@@ -58,13 +59,9 @@ import matplotlib.pyplot as plt
 #print(sns.heatmap(df))
 #sns.heatmap(df, annot = True, fmt = "d")
 #sns.heatmap(df, annot = True, fmt = "d", linewidths =.1)
-fmri = sns.load_dataset("fmri")
-df = fmri.copy()
+#fmri = sns.load_dataset("fmri")
+#df = fmri.copy()
 #sns.lineplot(x = "timepoint", y = "signal", data = df)
 #sns.lineplot(x = "timepoint", y = "signal",  hue = "event", style = "event", markers = True,  dashes = False, data = df)
-sns.lineplot(x = "timepoint",
-             y = "signal",
-             hue = "region",
-             style = "event",
-             data = df)
-plt.show()
+#sns.lineplot(x = "timepoint",  y = "signal",  hue = "region",style = "event", data = df)
+#plt.show()
