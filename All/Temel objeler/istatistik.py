@@ -18,7 +18,7 @@ orneklem10 = np.random.choice(a = populasyon, size = 100)
 """
 #print((orneklem1.mean() + orneklem2.mean() + orneklem3.mean() + orneklem4.mean() + orneklem5.mean()
 #+ orneklem6.mean() + orneklem7.mean() + orneklem8.mean() + orneklem9.mean() + orneklem10.mean() )  / 10)
-
+"""
 b = np.random.randint(1,10)
 #print(b)
 np.random.seed(10)
@@ -57,3 +57,19 @@ AB = pd.concat([A,B])
 AB.columns = ["gelir","GRUP"]
 print(AB.head())
 print(AB.tail())
+"""
+rng = np.random.RandomState(123)
+for i in np.arange(1,21):
+    deney_sayisi = 2**i
+    yazi_turalar = rng.randint(0, 2, size = deney_sayisi)
+    yazi_olasiliklari = np.mean(yazi_turalar)
+    print("Atış Sayısı:",deney_sayisi,"---",'Yazı Olasılığı: %.2f' % (yazi_olasiliklari * 100))
+from scipy.stats import binom
+p = 0.01
+n = 100
+rv = binom(n, p)
+print(rv.pmf(1))
+print(rv.pmf(5))
+print(rv.pmf(10))
+
+
