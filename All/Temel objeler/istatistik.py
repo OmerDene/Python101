@@ -58,18 +58,42 @@ AB.columns = ["gelir","GRUP"]
 print(AB.head())
 print(AB.tail())
 """
-rng = np.random.RandomState(123)
-for i in np.arange(1,21):
-    deney_sayisi = 2**i
-    yazi_turalar = rng.randint(0, 2, size = deney_sayisi)
-    yazi_olasiliklari = np.mean(yazi_turalar)
-    print("Atış Sayısı:",deney_sayisi,"---",'Yazı Olasılığı: %.2f' % (yazi_olasiliklari * 100))
-from scipy.stats import binom
-p = 0.01
-n = 100
-rv = binom(n, p)
-print(rv.pmf(1))
-print(rv.pmf(5))
-print(rv.pmf(10))
+oncesi = pd.DataFrame([123,119,119,116,123,123,121,120,117,118,121,121,123,119,
+            121,118,124,121,125,115,115,119,118,121,117,117,120,120,
+            121,117,118,117,123,118,124,121,115,118,125,115])
+
+sonrasi = pd.DataFrame([118,127,122,132,129,123,129,132,128,130,128,138,140,130,
+             134,134,124,140,134,129,129,138,134,124,122,126,133,127,
+             130,130,130,132,117,130,125,129,133,120,127,123])
+AYRIK = pd.concat([oncesi, sonrasi], axis = 1)
+AYRIK.columns = ["ONCESI","SONRASI"]
+from scipy.stats import shapiro
+print(shapiro(AYRIK.ONCESI))
+print(shapiro(AYRIK.SONRASI))
+import scipy.stats as stats
+print(stats.levene(AYRIK.ONCESI, AYRIK.SONRASI))
+
+"""
+GRUP_ONCESI = np.arange(len(oncesi))
+GRUP_ONCESI = pd.DataFrame(GRUP_ONCESI)
+GRUP_ONCESI[:] = "ONCESI"
+A = pd.concat([oncesi, GRUP_ONCESI], axis = 1)
+GRUP_SONRASI = np.arange(len(sonrasi))
+GRUP_SONRASI = pd.DataFrame(GRUP_SONRASI)
+GRUP_SONRASI[:] = "SONRASI"
+
+
+B = pd.concat([sonrasi, GRUP_SONRASI], axis = 1)
+BIRLIKTE = pd.concat([A,B])
+BIRLIKTE.columns = ["PERFORMANS","ONCESI_SONRASI"]
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+#sns.boxplot(x = "ONCESI_SONRASI", y = "PERFORMANS", data = BIRLIKTE)
+print(BIRLIKTE.ONCESI_SONRASI.unique())
+"""
+
+
+
 
 

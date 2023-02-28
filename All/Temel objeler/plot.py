@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 #print(sns.catplot(x = "cut", y = "price", hue = "color", kind = "point", data = df))
 #tips = sns.load_dataset("tips")
 #df = tips.copy()
-#print(sns.boxplot(y = "total_bill",x ="size", hue="sex", orient = "v",data=df))
+print(sns.boxplot(y = "total_bill",x ="size", hue="sex", orient = "v",data=df))
 #print(sns.barplot(x = "size", y = "total_bill", hue = "day", data = df))
 #print(sns.catplot(x = "size", y = "total_bill", hue = "day", kind = "point", data = df))
 #sns.scatterplot(x = "total_bill", y = "tip", data = df)
