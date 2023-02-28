@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 #populasyon =np.random.randint(0,10,10000)
@@ -58,40 +59,50 @@ AB.columns = ["gelir","GRUP"]
 print(AB.head())
 print(AB.tail())
 """
-oncesi = pd.DataFrame([123,119,119,116,123,123,121,120,117,118,121,121,123,119,
-            121,118,124,121,125,115,115,119,118,121,117,117,120,120,
-            121,117,118,117,123,118,124,121,115,118,125,115])
-
-sonrasi = pd.DataFrame([118,127,122,132,129,123,129,132,128,130,128,138,140,130,
-             134,134,124,140,134,129,129,138,134,124,122,126,133,127,
-             130,130,130,132,117,130,125,129,133,120,127,123])
-AYRIK = pd.concat([oncesi, sonrasi], axis = 1)
-AYRIK.columns = ["ONCESI","SONRASI"]
-from scipy.stats import shapiro
-print(shapiro(AYRIK.ONCESI))
-print(shapiro(AYRIK.SONRASI))
-import scipy.stats as stats
-print(stats.levene(AYRIK.ONCESI, AYRIK.SONRASI))
-
-"""
-GRUP_ONCESI = np.arange(len(oncesi))
-GRUP_ONCESI = pd.DataFrame(GRUP_ONCESI)
-GRUP_ONCESI[:] = "ONCESI"
-A = pd.concat([oncesi, GRUP_ONCESI], axis = 1)
-GRUP_SONRASI = np.arange(len(sonrasi))
-GRUP_SONRASI = pd.DataFrame(GRUP_SONRASI)
-GRUP_SONRASI[:] = "SONRASI"
 
 
-B = pd.concat([sonrasi, GRUP_SONRASI], axis = 1)
-BIRLIKTE = pd.concat([A,B])
-BIRLIKTE.columns = ["PERFORMANS","ONCESI_SONRASI"]
+
+A = pd.DataFrame(
+        [28, 33, 30, 29, 28, 29, 27, 31, 30, 32, 28, 33, 25, 29, 27, 31, 31, 30, 31, 34, 30, 32, 31, 34, 28, 32, 31, 28,
+         33, 29])
+
+B = pd.DataFrame(
+        [31, 32, 30, 30, 33, 32, 34, 27, 36, 30, 31, 30, 38, 29, 30, 34, 34, 31, 35, 35, 33, 30, 28, 29, 26, 37, 31, 28,
+         34, 33])
+
+C = pd.DataFrame(
+        [40, 33, 38, 41, 42, 43, 38, 35, 39, 39, 36, 34, 35, 40, 38, 36, 39, 36, 33, 35, 38, 35, 40, 40, 39, 38, 38, 43,
+         40, 42])
+
+AYRIK = pd.concat([A, B, C], axis=1)
+AYRIK.columns = ["A", "B", "C"]
+print("'AYRIK' Veri Seti: \n\n", AYRIK.head())
+
+GRUPA = np.arange(len(A))
+GRUPA = pd.DataFrame(GRUPA)
+GRUPA[:] = "A"
+A = pd.concat([A, GRUPA], axis=1)
+
+GRUPB = np.arange(len(B))
+GRUPB = pd.DataFrame(GRUPB)
+GRUPB[:] = "B"
+B = pd.concat([B, GRUPB], axis=1)
+
+GRUPC = np.arange(len(C))
+GRUPC = pd.DataFrame(GRUPC)
+GRUPC[:] = "C"
+C = pd.concat([C, GRUPC], axis=1)
+
+BIRLIKTE = pd.concat([A, B, C])
+BIRLIKTE
+
+BIRLIKTE.columns = ["Vakit", "A-B-C"]
+print("'BIRLIKTE' Veri Seti \n\n,", BIRLIKTE.head(), "\n")
 
 import seaborn as sns
-import matplotlib.pyplot as plt
-#sns.boxplot(x = "ONCESI_SONRASI", y = "PERFORMANS", data = BIRLIKTE)
-print(BIRLIKTE.ONCESI_SONRASI.unique())
-"""
+
+sns.boxplot(x="A-B-C", y="Vakit", data=BIRLIKTE);
+plt.show()
 
 
 
