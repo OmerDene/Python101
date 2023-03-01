@@ -58,7 +58,7 @@ AB = pd.concat([A,B])
 AB.columns = ["gelir","GRUP"]
 print(AB.head())
 print(AB.tail())
-"""
+
 
 
 
@@ -105,6 +105,67 @@ sns.boxplot(x="A-B-C", y="Vakit", data=BIRLIKTE);
 plt.show()
 
 
+"""
+import numpy as np
 
+import pandas as pd
+
+
+
+#Dusuk Goller ve Pandas cevirimi
+
+bjk1 = np.random.randint(0, 3, size = (18))
+
+pd_bjk1 = pd.DataFrame(bjk1)
+
+average_bjk1 = pd_bjk1.mean()
+
+print ('average BJK 1', average_bjk1)
+
+
+
+#Yuksek Goller ve Pandas cevirimi
+
+bjk2 = np.random.randint(4, 8, size = (6))
+
+pd_bjk2 = pd.DataFrame(bjk2)
+
+average_bjk2 = pd_bjk2.mean()
+
+print ('average BJK2', average_bjk2)
+
+
+
+#Birlestirme
+
+pd_bjk = pd.concat([pd_bjk1, pd_bjk2])
+
+average_bjk = pd_bjk.mean()
+
+print ('average BJK', average_bjk)
+
+
+
+#Aykiri Degerleri Bulma
+
+Q1 = pd_bjk.quantile(0.25)
+
+Q3 = pd_bjk.quantile(0.75)
+
+IQR = Q3 - Q1
+
+alt_sinir = Q1 - 1.5*IQR
+
+ust_sinir = Q3 + 1.5*IQR
+
+
+
+#Aykiri Degerleri Ayiklama
+
+t_pd_bjk = pd_bjk[~((pd_bjk < alt_sinir) | (pd_bjk > ust_sinir)).any(axis =1)]
+
+t_pd_bjk.mean()
+
+t_pd_bjk
 
 
