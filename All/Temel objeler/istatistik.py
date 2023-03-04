@@ -190,8 +190,8 @@ ust_sinir = Q3 + 1.5*IQR
 print(alt_sinir)
 print(ust_sinir)
 
-"""
-diamonds = sns.load_dataset('planets')
+
+diamonds = sns.load_dataset('titanic')
 diamonds = diamonds.select_dtypes(include = ['float64', 'int64'])
 df = diamonds.copy()
 df = df.dropna()
@@ -203,6 +203,24 @@ clf.fit_predict(df)
 df_scores = clf.negative_outlier_factor_
 np.sort(df_scores)[0:20]
 esik_deger = np.sort(df_scores)[13]
-print(esik_deger)
-print(pd.DataFrame(np.sort(df_scores)).plot(stacked=True, xlim=[0,50], style='.-')) ## sıcrama noktası
+#print(esik_deger)
+#print(pd.DataFrame(np.sort(df_scores)).plot(stacked=True, xlim=[0,50], style='.-')) ## sıcrama noktası
 plt.show()
+
+V1 = np.array([1,3,6,np.NaN,7,1,np.NaN,9,15])
+V2 = np.array([7,np.NaN,5,8,12,np.NaN,np.NaN,2,3])
+V3 = np.array([np.NaN,12,5,6,14,7,np.NaN,2,31])
+df = pd.DataFrame(
+        {"V1" : V1,
+         "V2" : V2,
+         "V3" : V3}
+)
+#print(df[df.isnull().all(axis = 1)])
+
+
+a= df["V1"].fillna(df["V1"].mean())
+#print(df.apply(lambda x: x.fillna(x.mean()), axis = 0))
+"""
+planet = sns.load_dataset('planets')
+df = pd.DataFrame(planet)
+print(df.isnull().sum())
