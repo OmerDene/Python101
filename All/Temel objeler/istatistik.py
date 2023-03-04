@@ -1,11 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
+
+
+"""
 #populasyon =np.random.randint(0,10,10000)
 #np.random.seed(100)
 #orneklem = np.random.choice(a=populasyon,size=100)
 #np.random.seed(10)
-""""
+
 orneklem1 = np.random.choice(a = populasyon, size = 100)
 orneklem2 = np.random.choice(a = populasyon, size = 100)
 orneklem3 = np.random.choice(a = populasyon, size = 100)
@@ -105,10 +109,8 @@ sns.boxplot(x="A-B-C", y="Vakit", data=BIRLIKTE);
 plt.show()
 
 
-"""
-import numpy as np
 
-import pandas as pd
+
 
 
 
@@ -169,3 +171,38 @@ t_pd_bjk.mean()
 t_pd_bjk
 
 
+planet = sns.load_dataset('tips')
+df = pd.DataFrame(planet)
+df= df.dropna()
+#print(df.head())
+
+
+df_total = pd.DataFrame(df["total_bill"])
+print(sns.boxplot(x ="total_bill",data=df_total))
+plt.show()
+
+Q1 = df_total.quantile(0.25)
+Q3 = df_total.quantile(0.75)
+IQR = Q3-Q1
+alt_sinir = Q1 - (1.5*IQR)
+ust_sinir = Q3 + 1.5*IQR
+
+print(alt_sinir)
+print(ust_sinir)
+
+"""
+diamonds = sns.load_dataset('planets')
+diamonds = diamonds.select_dtypes(include = ['float64', 'int64'])
+df = diamonds.copy()
+df = df.dropna()
+df.head()
+from sklearn.neighbors import LocalOutlierFactor
+clf = LocalOutlierFactor(n_neighbors = 20, contamination = 0.1)
+
+clf.fit_predict(df)
+df_scores = clf.negative_outlier_factor_
+np.sort(df_scores)[0:20]
+esik_deger = np.sort(df_scores)[13]
+print(esik_deger)
+print(pd.DataFrame(np.sort(df_scores)).plot(stacked=True, xlim=[0,50], style='.-')) ## sıcrama noktası
+plt.show()
