@@ -221,6 +221,27 @@ df = pd.DataFrame(
 a= df["V1"].fillna(df["V1"].mean())
 #print(df.apply(lambda x: x.fillna(x.mean()), axis = 0))
 """
-planet = sns.load_dataset('planets')
-df = pd.DataFrame(planet)
-print(df.isnull().sum())
+V1 = np.array([1,3,6,np.NaN,7,1,np.NaN,9,15])
+V2 = np.array([7,np.NaN,5,8,12,np.NaN,np.NaN,2,3])
+V3 = np.array([np.NaN,12,5,6,14,7,np.NaN,2,31])
+V4 = np.array(["IT","IT","IK","IT","IK","IK","IK","IT","IT"])
+
+df = pd.DataFrame(
+        {"maas" : V1,
+         "V2" : V2,
+         "V3" : V3,
+        "departman" : V4}
+)
+print(df)
+print(df["maas"].fillna(df.groupby("departman")["maas"].mean()))
+
+s = "ProgramlamaÖdeviİleriSeviyeVeriYapılarıveObjeleripynb"
+frekans = dict()
+
+for karakter in s:
+    if (karakter in frekans):
+        frekans[karakter] += 1
+    else:
+        frekans[karakter] = 1
+for i, j in frekans.items():
+    print(i, ":", j)
