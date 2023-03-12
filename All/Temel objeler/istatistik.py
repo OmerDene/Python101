@@ -223,36 +223,23 @@ a= df["V1"].fillna(df["V1"].mean())
 """
 
 
-def ekstra(fonk):
-    def ekstra_ozellik():
-        print("Mükemmel Sayılar...")
-        for sayı in range(1, 1001):
-            toplam = 0
-            i = 1
-            while (i < sayı):
-                if (sayı % i == 0):
-                    toplam += i
-                i += 1
-            if (toplam == sayı):
-                print(sayı)
-        fonk()
+class Kareler():
 
-    return ekstra_ozellik
+    def __init__(self, maksimum):
+        self.maksimum = maksimum
 
+        self.sayı = 1
 
-@ekstra
-def asal_sayılar():
-    print("Asal Sayılar...")
-    for sayı in range(2, 1001):
-        i = 2
-        say = 0
-        while (i < sayı):
-            if (sayı % i == 0):
-                say += 1
-            i += 1
-        if (say == 0):
-            print(sayı)
+    def __iter__(self):
+        return self
 
+    def __next__(self):
 
-asal_sayılar()
+        if (self.sayı <= self.maksimum):
 
+            sonuc = self.sayı ** 2
+            self.sayı += 1
+            return sonuc
+        else:
+            self.sayı = 1
+            raise StopIteration
